@@ -76,13 +76,13 @@ public class Main {
         }
         System.out.println("Ось сума всіх чисел: " + sum);
         return sum;
-    };
+    }
 
     public static int findArithmeticMeanOfAllElements (int [] array) {
         int arithmeticMean = findSumAllElements(array) / array.length;
         System.out.println("Середнє арифметичне число становить: " + arithmeticMean);
         return arithmeticMean;
-    };
+    }
 
     public static int findTheLargestElement (int [] array) {
         int largestElement = array[0];
@@ -93,7 +93,7 @@ public class Main {
         }
         System.out.println("Наразі це найбільше число у масиві: " + largestElement);
         return largestElement;
-    };
+    }
     /**
      * Ну і головний трабл, що виконується три кейси один за другим, а не якийсь один.
      * Тобто отак-от "сиро" вийшло.
