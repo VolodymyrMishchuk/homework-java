@@ -39,34 +39,26 @@ public class Main {
                 "\n 2 - Знайти середнє арифметичне;" +
                 "\n 3 - Знайти найбільший елемент;" +
                 "\n 4 - Завершити програму";
-        System.out.println(condition);
 
-        int input = scanner.nextInt();
+        boolean executeLoop = true;
 
-        /**
-         * Чи потрібно функції оголошувати через змінні?
-         * бо попробував прямо в case 1 вказати і наче нічого не матюкається
-         */
-        //int sumAllElements = findSumAllElements(array);
-        int arithmeticMeanOfAllElements = findArithmeticMeanOfAllElements(array);
-        int theLargestElement = findTheLargestElement(array);
+        while (executeLoop) {
+            System.out.println(condition);
+            int input = scanner.nextInt();
 
-        /**
-         * якщо застосовую while, то це просто безкінечний цикл
-         */
-        //while (true) {
             var result = switch(input) {
                 case 1 -> findSumAllElements(array);
-                case 2 -> arithmeticMeanOfAllElements;
-                case 3 -> theLargestElement;
+                case 2 -> findArithmeticMeanOfAllElements(array);
+                case 3 -> findTheLargestElement(array);
                 case 4 -> {
+                    executeLoop = false;
                     scanner.close();
                     yield "Па-Ка !!!";
                 }
                 default -> "Зберись! Просто цифру від 1 до 4";
             };
             System.out.println(result);
-        //}
+        }
     }
 
     public static int findSumAllElements (int [] array) {
@@ -94,9 +86,4 @@ public class Main {
         System.out.println("Наразі це найбільше число у масиві: " + largestElement);
         return largestElement;
     }
-    /**
-     * Ну і головний трабл, що виконується три кейси один за другим, а не якийсь один.
-     * Тобто отак-от "сиро" вийшло.
-     * Якщо є натхнення, будь ласка, поправте мене
-     */
 }
