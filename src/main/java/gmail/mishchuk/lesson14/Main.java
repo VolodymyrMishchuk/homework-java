@@ -1,6 +1,8 @@
 package gmail.mishchuk.lesson14;
 
 import gmail.mishchuk.lesson14.quasiAnimals.Dragon;
+import gmail.mishchuk.lesson14.quasiAnimals.TypeOfDragons;
+
 import java.util.Scanner;
 import java.util.Random;
 
@@ -78,8 +80,12 @@ public class Main {
                 }
             }
 
+            System.out.print("Type of dragon: ");
+            String typeOfDragonsString = scanner.next();
+            TypeOfDragons typeOfDragons = TypeOfDragons.valueOf(typeOfDragonsString);
+
             scanner.nextLine(); // очистка буфера
-            dragons[i] = new Dragon(name, age, weight);
+            dragons[i] = new Dragon(name, age, weight, typeOfDragons);
         }
 
         boolean executeLoop = true;
