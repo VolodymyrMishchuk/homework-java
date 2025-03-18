@@ -1,9 +1,7 @@
 package gmail.mishchuk.lesson18;
 
 import lombok.Data;
-import java.time.LocalDate;
 import java.util.Scanner;
-import static gmail.mishchuk.lesson18.Car.generateRandomDate;
 import static gmail.mishchuk.recursion.Main.sum;
 
 @Data
@@ -39,10 +37,7 @@ public class Main {
         scanner.nextLine(); // очистка буфера
         int drivingRange = (int) sum(fuelInReserve, fuelConsumption);
         System.out.println("Ага, тоді авто зможе подолати: " + drivingRange + "км");
-        LocalDate startDate = LocalDate.of(2000, 1, 1);
-        LocalDate endDate = LocalDate.of(2025, 12, 31);
-        LocalDate randomDate = generateRandomDate(startDate, endDate);
-        Car car = new Car(brand, fuelInReserve, fuelConsumption, randomDate);
+        Car car = new Car(brand, fuelInReserve, fuelConsumption);
         System.out.println(car.toStringCustom());
         scanner.close();
     }

@@ -17,7 +17,7 @@ class Car {
     LocalDate today = LocalDate.now();
     LocalDate startDate = LocalDate.of(2000, 1, 1);
     LocalDate endDate = LocalDate.of(2025, 12, 31);
-    LocalDate randomDate;
+    LocalDate randomDate = generateRandomDate(startDate, endDate);
     public static LocalDate generateRandomDate(LocalDate startDate, LocalDate endDate) {
         Random random = new Random();
         long daysBetween = ChronoUnit.DAYS.between(startDate, endDate);
@@ -27,13 +27,11 @@ class Car {
     public Car(
             String brand,
             double tankFullness,
-            double fuelConsumption,
-            LocalDate randomDate
+            double fuelConsumption
     ) {
         this.brand = brand;
         this.tankFullness = tankFullness;
         this.fuelConsumption = fuelConsumption;
-        this.randomDate = randomDate;
         this.currentTuev = randomDate.isBefore(today) || randomDate.isEqual(today);
         this.drivingRange = sum(this.tankFullness, this.fuelConsumption);
         System.out.println("\n\t Тепер підсумуємо: ");
