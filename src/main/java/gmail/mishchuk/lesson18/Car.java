@@ -3,12 +3,11 @@ package gmail.mishchuk.lesson18;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Random;
-
 import lombok.Data;
-
 import static gmail.mishchuk.recursion.Main.sum;
 
 @Data
+
 class Car {
     private String brand;
     private double tankFullness;
