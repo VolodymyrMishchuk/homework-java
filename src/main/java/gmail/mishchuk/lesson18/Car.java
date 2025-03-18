@@ -6,56 +6,39 @@ import java.util.Random;
 
 import lombok.Data;
 
+import static gmail.mishchuk.recursion.Main.sum;
+
 @Data
-
-public class Car {
-
-    String brand;
+class Car {
+    private String brand;
     private double tankFullness;
     private double fuelConsumption;
-
+    boolean currentTuev;
+    private double drivingRange;
     LocalDate today = LocalDate.now();
     LocalDate startDate = LocalDate.of(2000, 1, 1);
     LocalDate endDate = LocalDate.of(2025, 12, 31);
-    LocalDate randomDate = generateRandomDate(startDate, endDate);
-
+    LocalDate randomDate;
     public static LocalDate generateRandomDate(LocalDate startDate, LocalDate endDate) {
         Random random = new Random();
-
         long daysBetween = ChronoUnit.DAYS.between(startDate, endDate);
         long randomDays = random.nextLong(daysBetween);
-
         return startDate.plusDays(randomDays);
     }
-
-    double drivingRange = range(tankFullness, fuelConsumption);
-
-    public static double range(double tankFullness, double fuelConsumption) {
-        return (tankFullness / fuelConsumption) * 100;
-    }
-
-    ;
-
-    boolean currentTuev = randomDate.isBefore(today) || randomDate.isEqual(today);
-
     public Car(
             String brand,
             double tankFullness,
             double fuelConsumption,
-            LocalDate randomDate,
-            boolean currentTuev,
-            double drivingRange
+            LocalDate randomDate
     ) {
         this.brand = brand;
         this.tankFullness = tankFullness;
         this.fuelConsumption = fuelConsumption;
         this.randomDate = randomDate;
-        this.currentTuev = currentTuev;
-        this.drivingRange = drivingRange;
-
+        this.currentTuev = randomDate.isBefore(today) || randomDate.isEqual(today);
+        this.drivingRange = sum(this.tankFullness, this.fuelConsumption);
         System.out.println("\n\t Тепер підсумуємо: ");
     }
-
     public String toStringCustom() {
         return  "Наш " + brand +
                 " заправлений на " + tankFullness +
@@ -64,3 +47,4 @@ public class Car {
                 "км. Доречі наш TÜV має статус: " + currentTuev;
     }
 }
+
