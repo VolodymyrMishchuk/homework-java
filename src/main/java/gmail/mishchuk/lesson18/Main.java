@@ -1,10 +1,7 @@
 package gmail.mishchuk.lesson18;
 
-import lombok.Data;
 import java.util.Scanner;
 import static gmail.mishchuk.recursion.Main.sum;
-
-@Data
 
 public class Main {
     public static void main(String[] args) {
