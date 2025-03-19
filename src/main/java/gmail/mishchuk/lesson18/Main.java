@@ -29,7 +29,7 @@ public class Main {
             }
         }
 
-        System.out.print("Яка витрата пального на 100 кілометрів? - ");
+        System.out.print("Яка витрата пального на 100 кілометрів? -- ");
         double fuelConsumption = scanner.nextDouble();
         scanner.nextLine(); // очистка буфера
         int drivingRange = (int) sum(fuelInReserve, fuelConsumption);
