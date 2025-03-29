@@ -1,7 +1,5 @@
 package gmail.mishchuk.lesson14.quasiAnimals;
 
-import java.sql.SQLOutput;
-
 public class Dragon {
 
     private String name;
