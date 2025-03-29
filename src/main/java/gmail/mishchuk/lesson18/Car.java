@@ -3,10 +3,7 @@ package gmail.mishchuk.lesson18;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Random;
-//import lombok.Data;
 import static gmail.mishchuk.recursion.Main.sum;
-
-//@Data
 
 class Car {
     private String brand;
@@ -23,47 +20,8 @@ class Car {
         Random random = new Random();
         long daysBetween = ChronoUnit.DAYS.between(startDate, endDate);
         long randomDays = random.nextLong(daysBetween);
-        return startDate.plusDays(randomDays)
-                //, String str = startDate.plusDays(randomDays)
-                ;
+        return startDate.plusDays(randomDays);
     }
-
-    /*      це таке рішення пропонує Chat-GPT, коли хотів повернути з функції два значення
-
-
-            import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
-import java.util.Random;
-
-    class DateResult {
-        LocalDate date;
-        String dateString;
-
-        public DateResult(LocalDate date, String dateString) {
-            this.date = date;
-            this.dateString = dateString;
-        }
-    }
-
-    public class Main {
-        public static DateResult generateRandomDate(LocalDate startDate, LocalDate endDate) {
-            Random random = new Random();
-            long daysBetween = ChronoUnit.DAYS.between(startDate, endDate);
-            long randomDays = random.nextLong(daysBetween);
-            LocalDate randomDate = startDate.plusDays(randomDays);
-            return new DateResult(randomDate, randomDate.toString());
-        }
-
-        public static void main(String[] args) {
-            LocalDate startDate = LocalDate.of(2020, 1, 1);
-            LocalDate endDate = LocalDate.of(2025, 1, 1);
-            DateResult result = generateRandomDate(startDate, endDate);
-
-            System.out.println("Random Date: " + result.date);
-            System.out.println("Date as String: " + result.dateString);
-        }
-    }
-    */
 
     public Car(
             String brand,
