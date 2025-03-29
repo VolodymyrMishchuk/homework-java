@@ -1,47 +1,44 @@
 package gmail.mishchuk.lesson18;
 
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
-import java.util.Random;
+
 import static gmail.mishchuk.recursion.Main.sum;
 
-class Car {
+
+public class Car {
+
     private String brand;
     private double tankFullness;
     private double fuelConsumption;
-    boolean currentTuev;
-    private double drivingRange;
-    LocalDate today = LocalDate.now();
-    LocalDate startDate = LocalDate.of(2000, 1, 1);
-    LocalDate endDate = LocalDate.of(2025, 12, 31);
-    LocalDate randomDate = generateRandomDate(startDate, endDate);
+    private LocalDate nextTuev;
 
-    public static LocalDate generateRandomDate(LocalDate startDate, LocalDate endDate) {
-        Random random = new Random();
-        long daysBetween = ChronoUnit.DAYS.between(startDate, endDate);
-        long randomDays = random.nextLong(daysBetween);
-        return startDate.plusDays(randomDays);
-    }
-
-    public Car(
-            String brand,
-            double tankFullness,
-            double fuelConsumption
-    ) {
+    public Car(String brand, double tankFullness, double fuelConsumption, LocalDate nextTuev) {
         this.brand = brand;
         this.tankFullness = tankFullness;
         this.fuelConsumption = fuelConsumption;
-        this.currentTuev = randomDate.isBefore(today) || randomDate.isEqual(today);
-        this.drivingRange = sum(this.tankFullness, this.fuelConsumption);
-        System.out.println("\n\t Тепер підсумуємо: ");
+        this.nextTuev = nextTuev;
     }
 
     public String toStringCustom() {
-        return "Наш " + brand +
-                " заправлений на " + tankFullness +
-                "л, отже з середнім розходом " + fuelConsumption +
-                "л на 100км ми змогли би проїхати " + drivingRange +
-                "км. Доречі наш TÜV має статус: " + currentTuev;
+        System.out.println("\n\t Тепер підсумуємо: ");
+
+        return "Наш " + brand + " заправлений на " + tankFullness + "л, отже з середнім розходом " + fuelConsumption + "л на 100км ми змогли би проїхати " + calculateDrivingRange() + "км. Доречі наш TÜV має статус: " + nextTuev;
+    }
+
+    public double calculateDrivingRange() {
+        if (this.tankFullness < 0.0001) {
+            return 0;
+        }
+        double distance = (this.tankFullness / this.fuelConsumption) * 100;
+        return distance + sum(this.tankFullness - distance, this.fuelConsumption);
+    }
+
+    public boolean isAllowedToDrive() {
+        return LocalDate.now().isBefore(this.nextTuev) || LocalDate.now().isEqual(this.nextTuev);
+    }
+
+    public boolean isAbleToDrive() {
+        return tankFullness > 0.0001;
     }
 
     public String getBrand() {
@@ -68,52 +65,12 @@ class Car {
         this.fuelConsumption = fuelConsumption;
     }
 
-    public boolean isCurrentTuev() {
-        return currentTuev;
+    public LocalDate getNextTuev() {
+        return nextTuev;
     }
 
-    public void setCurrentTuev(boolean currentTuev) {
-        this.currentTuev = currentTuev;
-    }
-
-    public double getDrivingRange() {
-        return drivingRange;
-    }
-
-    public void setDrivingRange(double drivingRange) {
-        this.drivingRange = drivingRange;
-    }
-
-    public LocalDate getToday() {
-        return today;
-    }
-
-    public void setToday(LocalDate today) {
-        this.today = today;
-    }
-
-    public LocalDate getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
-    }
-
-    public LocalDate getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(LocalDate endDate) {
-        this.endDate = endDate;
-    }
-
-    public LocalDate getRandomDate() {
-        return randomDate;
-    }
-
-    public void setRandomDate(LocalDate randomDate) {
-        this.randomDate = randomDate;
+    public void setNextTuev(LocalDate nextTuev) {
+        this.nextTuev = nextTuev;
     }
 }
 
