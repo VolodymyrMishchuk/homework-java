@@ -9,7 +9,7 @@ class CircleTest {
     @Test
     void shouldDoSetAndGetFormFactor() {
         // given
-        Circle circle = new Circle(5, FormFactor.CIRCLE);
+        Circle circle = new Circle(5.0, FormFactor.CIRCLE);
 
         // when
         circle.setFormFactor(FormFactor.SQUARE);

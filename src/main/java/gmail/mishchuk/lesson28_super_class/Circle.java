@@ -21,5 +21,4 @@ public class Circle extends Shape {
     public void displayInfo() {
         System.out.println(" Form: " + formFactor + "\n Radius: " + getRadius());
     }
-
 }

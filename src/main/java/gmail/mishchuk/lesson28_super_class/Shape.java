@@ -118,5 +118,4 @@ public class Shape {
     public void setWidth(double width) {
         this.width = width;
     }
-
 }
