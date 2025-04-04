@@ -18,7 +18,7 @@ public class Main {
         rectangle.calculateArea(rectangle.getSideA(), rectangle.getSideB());
         rectangle.displayInfo();
 
-        Shape square = new Square(4.00, SQUARE);
+        Shape square = new Square(4.0, SQUARE);
         square.setSideA(7.0);
         square.calculatePerimeter(square.getSideA());
         square.calculateArea(square.getSideA());
