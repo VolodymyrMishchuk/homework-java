@@ -1,47 +1,47 @@
 package gmail.mishchuk.lesson28_super_class;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class Square extends Rectangle {
 
+    @Getter
+    @Setter
+    double sideA;
     private FormFactor formFactor;
 
-    public Square(double width, FormFactor formFactor) {
-        super(width);
+    public Square(double sideA, FormFactor formFactor) {
+        this.sideA = sideA;
         this.formFactor = formFactor;
     }
 
     @Override
-    public FormFactor getFormFactor() {
-        return formFactor;
+    double calculateArea() {
+        double area = sideA * sideA;
+        if (area != 0) {
+            return area;
+        }
+        return 0;
     }
 
     @Override
-    public void setFormFactor(FormFactor formFactor) {
-        this.formFactor = formFactor;
+    double calculatePerimeter() {
+        double perimeter = sideA * 4;
+        if (perimeter != 0) {
+            return perimeter;
+        }
+        return 0;
     }
 
     @Override
     public void displayInfo() {
-        System.out.println(" Form: " + formFactor + "\n Side of the square: " + getWidth());
-
+        System.out.println(
+                " Form: " + formFactor
+                + "\n Width: " + sideA
+                + "\n Area: " + calculateArea()
+                + "\n Perimeter: " + calculatePerimeter()
+        );
     }
-
-    /*
-    @Override
-    public double calculateAreaRectangles(double width, double height) {
-        if (height == width) {
-            double perimeter = (height * 4);
-            String strSuccess = " The perimeter of the square is: ";
-            String strFailure = "The perimeter was not determined";
-            if (perimeter != 0) {
-                System.out.println(strSuccess + perimeter);
-                return perimeter;
-            } else {
-                System.out.println(strFailure);
-                return 0;
-            }
-        }
-        System.out.println("It isn't a square");
-        return 0;
-    }
-    */
 }
+
+

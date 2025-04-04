@@ -11,17 +11,18 @@ public class Main {
         circle.calculateCircumference(circle.getRadius());
         circle.calculateAreaCircles(circle.getRadius());
 
-        Shape rectangle = new Rectangle(10.0, 5.0, RECTANGLE);
-        rectangle.setWidth(12.0);
-        rectangle.setHeight(8.0);
+        Rectangle rectangle = new Rectangle(10.0, 5.0, RECTANGLE);
+        rectangle.setSideA(12.0);
+        rectangle.setSideB(8.0);
+        rectangle.calculatePerimeter(rectangle.getSideA(), rectangle.getSideB());
+        rectangle.calculateArea(rectangle.getSideA(), rectangle.getSideB());
         rectangle.displayInfo();
-        rectangle.calculatePerimeterRectangles(rectangle.getWidth(), rectangle.getHeight());
-        rectangle.calculateAreaRectangles(rectangle.getWidth(), rectangle.getHeight());
 
-        Shape square = new Square(4.0, SQUARE);
-        square.setWidth(7.0);
+        Shape square = new Square(4.00, SQUARE);
+        square.setSideA(7.0);
+        square.calculatePerimeter(square.getSideA());
+        square.calculateArea(square.getSideA());
         square.displayInfo();
-        square.calculatePerimeterSquares(square.getWidth());
-        square.calculateAreaSquares(square.getWidth());
+
     }
 }
