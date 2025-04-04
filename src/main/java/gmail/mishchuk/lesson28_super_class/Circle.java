@@ -37,4 +37,20 @@ public class Circle extends Shape {
                         + "\n Perimeter: " + calculatePerimeter()
         );
     }
+
+    public FormFactor getFormFactor() {
+        return formFactor;
+    }
+
+    public void setFormFactor(FormFactor formFactor) {
+        this.formFactor = formFactor;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
 }

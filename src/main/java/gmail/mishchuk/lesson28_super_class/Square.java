@@ -1,12 +1,9 @@
 package gmail.mishchuk.lesson28_super_class;
 
-import lombok.Getter;
-import lombok.Setter;
+
 
 public class Square extends Rectangle {
 
-    @Getter
-    @Setter
     double sideA;
     private FormFactor formFactor;
 
@@ -41,6 +38,26 @@ public class Square extends Rectangle {
                 + "\n Area: " + calculateArea()
                 + "\n Perimeter: " + calculatePerimeter()
         );
+    }
+
+    @Override
+    public double getSideA() {
+        return sideA;
+    }
+
+    @Override
+    public void setSideA(double sideA) {
+        this.sideA = sideA;
+    }
+
+    @Override
+    public FormFactor getFormFactor() {
+        return formFactor;
+    }
+
+    @Override
+    public void setFormFactor(FormFactor formFactor) {
+        this.formFactor = formFactor;
     }
 }
 

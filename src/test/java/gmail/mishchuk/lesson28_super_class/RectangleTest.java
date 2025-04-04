@@ -29,15 +29,15 @@ class RectangleTest {
         Rectangle rectangle = new Rectangle(5.0, 4.0, FormFactor.RECTANGLE);
 
         // when
-        rectangle.setWidth(7.0);
+        rectangle.setSideA(7.0);
 
         // then
-        assertEquals(7.0, rectangle.getWidth());
+        assertEquals(7.0, rectangle.getSideB());
         System.out.println(
                 "We are waiting for width to be set to "
                         + 7.0
                         + "\nand got width: "
-                        + rectangle.getWidth()
+                        + rectangle.getSideB()
         );
     }
 
@@ -47,15 +47,15 @@ class RectangleTest {
         Rectangle rectangle = new Rectangle(5.0, 4.0, FormFactor.RECTANGLE);
 
         // when
-        rectangle.setHeight(8.0);
+        rectangle.setSideB(8.0);
 
         // then
-        assertEquals(8.0, rectangle.getHeight());
+        assertEquals(8.0, rectangle.getSideB());
         System.out.println(
                 "We are waiting for width to be set to "
                         + 8.0
                         + "\nand got width: "
-                        + rectangle.getHeight()
+                        + rectangle.getSideB()
         );
     }
 }

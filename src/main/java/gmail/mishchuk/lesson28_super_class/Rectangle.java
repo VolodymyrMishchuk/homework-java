@@ -1,8 +1,5 @@
 package gmail.mishchuk.lesson28_super_class;
 
-import lombok.Data;
-@Data
-
 public class Rectangle extends Shape {
 
     private FormFactor formFactor;
@@ -45,5 +42,29 @@ public class Rectangle extends Shape {
                 + "\n Area: " + calculateArea()
                 + "\n Perimeter: " + calculatePerimeter()
         );
+    }
+
+    public FormFactor getFormFactor() {
+        return formFactor;
+    }
+
+    public void setFormFactor(FormFactor formFactor) {
+        this.formFactor = formFactor;
+    }
+
+    public double getSideA() {
+        return sideA;
+    }
+
+    public void setSideA(double sideA) {
+        this.sideA = sideA;
+    }
+
+    public double getSideB() {
+        return sideB;
+    }
+
+    public void setSideB(double sideB) {
+        this.sideB = sideB;
     }
 }

@@ -1,9 +1,5 @@
 package gmail.mishchuk.lesson28_super_class;
 
-import lombok.Data;
-
-@Data
-
 abstract class Shape {
 
     Shape() {
