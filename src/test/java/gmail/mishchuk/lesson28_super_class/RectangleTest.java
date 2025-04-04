@@ -29,7 +29,7 @@ class RectangleTest {
         Rectangle rectangle = new Rectangle(5.0, 4.0, FormFactor.RECTANGLE);
 
         // when
-        rectangle.setSideA(7.0);
+        rectangle.setSideB(7.0);
 
         // then
         assertEquals(7.0, rectangle.getSideB());
