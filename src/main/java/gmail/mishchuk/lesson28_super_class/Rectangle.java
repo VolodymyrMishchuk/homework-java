@@ -16,7 +16,7 @@ public class Rectangle extends Shape {
     }
 
     @Override
-    double calculateArea() {
+    public double calculateArea() {
         double area = sideA * sideB;
         if (area != 0) {
             return area;
