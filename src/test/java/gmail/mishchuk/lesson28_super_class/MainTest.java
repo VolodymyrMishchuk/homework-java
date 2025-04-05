@@ -31,15 +31,15 @@ class MainTest {
 
         // when
         circle.setRadius(15.0);
-        circle.calculateAreaCircles(circle.getRadius());
+        circle.calculateArea();
 
         // then
-        assertEquals(706.8583470577034, circle.calculateAreaCircles(circle.getRadius()));
+        assertEquals(706.8583470577034, circle.calculateArea());
         System.out.println(
                 "We are waiting for circumference to be set to "
                         + 706.8583470577034
                         + "\nand got circumference: "
-                        + circle.calculateAreaCircles(circle.getRadius())
+                        + circle.calculateArea()
         );
     }
 
@@ -50,15 +50,15 @@ class MainTest {
 
         // when
         circle.setRadius(15.0);
-        circle.calculateAreaCircles(circle.getRadius());
+        circle.calculateArea();
 
         // then
-        assertEquals(706.8583470577034, circle.calculateAreaCircles(circle.getRadius()));
+        assertEquals(706.8583470577034, circle.calculateArea());
         System.out.println(
                 "We are waiting for area of circle to be set to "
                         + 706.8583470577034
                         + "\nand got area of circle: "
-                        + circle.calculateAreaCircles(circle.getRadius())
+                        + circle.calculateArea()
         );
     }
 
@@ -68,15 +68,15 @@ class MainTest {
         Rectangle rectangle = new Rectangle(5.0, 4.0, FormFactor.RECTANGLE);
 
         // when
-        rectangle.setWidth(7.0);
+        rectangle.setSideA(7.0);
 
         // then
-        assertEquals(7.0, rectangle.getWidth());
+        assertEquals(7.0, rectangle.getSideA());
         System.out.println(
                 "We are waiting for width to be set to "
                         + 7.0
                         + "\nand got width: "
-                        + rectangle.getWidth()
+                        + rectangle.getSideA()
         );
     }
 
@@ -86,15 +86,15 @@ class MainTest {
         Rectangle rectangle = new Rectangle(5.0, 4.0, FormFactor.RECTANGLE);
 
         // when
-        rectangle.setHeight(8.0);
+        rectangle.setSideB(8.0);
 
         // then
-        assertEquals(8.0, rectangle.getHeight());
+        assertEquals(8.0, rectangle.getSideB());
         System.out.println(
                 "We are waiting for width to be set to "
                         + 8.0
                         + "\nand got width: "
-                        + rectangle.getHeight()
+                        + rectangle.getSideB()
         );
     }
 
@@ -104,17 +104,17 @@ class MainTest {
         Rectangle rectangle = new Rectangle(5.0, 4.0, FormFactor.RECTANGLE);
 
         // when
-        rectangle.setWidth(7.0);
-        rectangle.setHeight(8.0);
-        rectangle.calculatePerimeterRectangles(rectangle.getWidth(), rectangle.getHeight());
+        rectangle.setSideA(7.0);
+        rectangle.setSideB(8.0);
+        rectangle.calculatePerimeter();
 
         // then
-        assertEquals(30.0, rectangle.calculatePerimeterRectangles(rectangle.getWidth(), rectangle.getHeight()));
+        assertEquals(30.0, rectangle.calculatePerimeter());
         System.out.println(
                 "We are waiting for perimeter of rectangle to be set to "
                         + 30.0
                         + "\nand got perimeter of rectangle: "
-                        + rectangle.calculatePerimeterRectangles(rectangle.getWidth(), rectangle.getHeight())
+                        + rectangle.calculatePerimeter()
         );
     }
 
@@ -124,17 +124,17 @@ class MainTest {
         Rectangle rectangle = new Rectangle(5.0, 4.0, FormFactor.RECTANGLE);
 
         // when
-        rectangle.setWidth(7.0);
-        rectangle.setHeight(8.0);
-        rectangle.calculateAreaRectangles(rectangle.getWidth(), rectangle.getHeight());
+        rectangle.setSideA(7.0);
+        rectangle.setSideB(8.0);
+        rectangle.calculateArea();
 
         // then
-        assertEquals(56.0, rectangle.calculateAreaRectangles(rectangle.getWidth(), rectangle.getHeight()));
+        assertEquals(56.0, rectangle.calculateArea());
         System.out.println(
                 "We are waiting for area of rectangle to be set to "
                         + 56.0
                         + "\nand got area of rectangle: "
-                        + rectangle.calculateAreaRectangles(rectangle.getWidth(), rectangle.getHeight())
+                        + rectangle.calculateArea()
         );
     }
 
@@ -144,15 +144,15 @@ class MainTest {
         Square square = new Square(5.0, FormFactor.SQUARE);
 
         // when
-        square.setWidth(7.0);
+        square.setSide(7.0);
 
         // then
-        assertEquals(7.0, square.getWidth());
+        assertEquals(7.0, square.getSide());
         System.out.println(
                 "We are waiting for width to be set to "
                         + 7.0
                         + "\nand got width: "
-                        + square.getWidth()
+                        + square.getSide()
         );
     }
 
@@ -162,16 +162,16 @@ class MainTest {
         Square square = new Square(5.0, FormFactor.RECTANGLE);
 
         // when
-        square.setWidth(7.0);
-        square.calculatePerimeterSquares(square.getWidth());
+        square.setSide(7.0);
+        square.calculatePerimeter();
 
         // then
-        assertEquals(28.0, square.calculatePerimeterSquares(square.getWidth()));
+        assertEquals(28.0, square.calculatePerimeter());
         System.out.println(
                 "We are waiting for perimeter of square to be set to "
                         + 28.0
                         + "\nand got perimeter of square: "
-                        + square.calculatePerimeterSquares(square.getWidth())
+                        + square.calculatePerimeter()
         );
     }
 
@@ -181,16 +181,16 @@ class MainTest {
         Square rectangle = new Square(5.0, FormFactor.RECTANGLE);
 
         // when
-        rectangle.setWidth(7.0);
-        rectangle.calculateAreaSquares(rectangle.getWidth());
+        rectangle.setSide(7.0);
+        rectangle.calculateArea();
 
         // then
-        assertEquals(49.0, rectangle.calculateAreaSquares(rectangle.getWidth()));
+        assertEquals(49.0, rectangle.calculateArea());
         System.out.println(
                 "We are waiting for area of square to be set to "
                         + 49.0
                         + "\nand got area of square: "
-                        + rectangle.calculateAreaSquares(rectangle.getWidth())
+                        + rectangle.calculateArea()
         );
     }
 }

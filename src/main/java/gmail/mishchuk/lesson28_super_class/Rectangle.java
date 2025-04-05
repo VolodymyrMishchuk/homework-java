@@ -2,15 +2,35 @@ package gmail.mishchuk.lesson28_super_class;
 
 public class Rectangle extends Shape {
 
+    private double sideA;
+    private double sideB;
     private FormFactor formFactor;
 
-    public Rectangle(double width, double height, FormFactor formFactor) {
-        super(width, height);
+    public Rectangle(double sideA, double sideB, FormFactor formFactor) {
+        this.sideA = sideA;
+        this.sideB = sideB;
         this.formFactor = formFactor;
     }
 
-    public Rectangle(double width) {
-        super(width);
+    @Override
+    public double calculateArea() {
+        return (sideA * sideB);
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return ((sideA * 2) + (sideB * 2));
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println(
+                " Form: " + formFactor
+                + "\n Width: " + sideA
+                + "\n Height: " + sideB
+                + "\n Area: " + calculateArea()
+                + "\n Perimeter: " + calculatePerimeter()
+        );
     }
 
     public FormFactor getFormFactor() {
@@ -21,8 +41,19 @@ public class Rectangle extends Shape {
         this.formFactor = formFactor;
     }
 
-    @Override
-    public void displayInfo() {
-        System.out.println(" Form: " + formFactor + "\n Width: " + getWidth() + "\n Height: " + getHeight());
+    public double getSideA() {
+        return sideA;
+    }
+
+    public void setSideA(double sideA) {
+        this.sideA = sideA;
+    }
+
+    public double getSideB() {
+        return sideB;
+    }
+
+    public void setSideB(double sideB) {
+        this.sideB = sideB;
     }
 }
