@@ -29,15 +29,15 @@ class SquareTest {
         Square square = new Square(5.0, FormFactor.SQUARE);
 
         // when
-        square.setSideA(7.0);
+        square.setSide(7.0);
 
         // then
-        assertEquals(7.0, square.getSideA());
+        assertEquals(7.0, square.getSide());
         System.out.println(
                 "We are waiting for width to be set to "
                         + 7.0
                         + "\nand got width: "
-                        + square.getSideA()
+                        + square.getSide()
         );
     }
 

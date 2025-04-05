@@ -11,30 +11,21 @@ public class Circle extends Shape {
     }
 
     @Override
-    double calculateArea() {
-        double area = Math.PI * radius * radius;
-        if (area != 0) {
-            return area;
-        }
-            return 0;
+    public double calculateArea() {
+        return (Math.PI * radius * radius);
     }
 
     @Override
     public double calculatePerimeter() {
-        double circumference = 2 * Math.PI * radius;
-        if (circumference != 0) {
-            return circumference;
-        }
-            return 0;
+        return (2 * Math.PI * radius);
     }
 
     @Override
     public void displayInfo() {
-        System.out.println(
-                        " Form: " + formFactor
+        System.out.println(" Form: " + formFactor
                         + "\n Radius: " + radius
                         + "\n Area: " + calculateArea()
-                        + "\n Perimeter: " + calculatePerimeter()
+                        + "\n Circumference: " + calculatePerimeter()
         );
     }
 

@@ -1,64 +1,27 @@
 package gmail.mishchuk.lesson28_super_class;
 
-
-
 public class Square extends Rectangle {
 
-    private double side;
-    private FormFactor formFactor;
-
-    public Square(double sideA, FormFactor formFactor) {
-        this.sideA = sideA;
-        this.formFactor = formFactor;
-    }
-
-    @Override
-    double calculateArea() {
-        double area = sideA * sideA;
-        if (area != 0) {
-            return area;
-        }
-        return 0;
-    }
-
-    @Override
-    double calculatePerimeter() {
-        double perimeter = sideA * 4;
-        if (perimeter != 0) {
-            return perimeter;
-        }
-        return 0;
+    public Square(double side, FormFactor formFactor) {
+        super(side, side, formFactor);
     }
 
     @Override
     public void displayInfo() {
         System.out.println(
-                " Form: " + formFactor
-                + "\n Width: " + sideA
+                " Form: " + getFormFactor()
+                + "\n Width: " + getSide()
                 + "\n Area: " + calculateArea()
                 + "\n Perimeter: " + calculatePerimeter()
         );
     }
 
-    @Override
-    public double getSideA() {
-        return sideA;
+    public double getSide() {
+        return getSideA();
     }
 
-    @Override
-    public void setSideA(double sideA) {
-        this.sideA = sideA;
-    }
-
-    @Override
-    public FormFactor getFormFactor() {
-        return formFactor;
-    }
-
-    @Override
-    public void setFormFactor(FormFactor formFactor) {
-        this.formFactor = formFactor;
+    public void setSide(double side) {
+        super.setSideA(side);
+        super.setSideB(side);
     }
 }
-
-

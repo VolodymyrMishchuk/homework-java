@@ -8,8 +8,8 @@ public class Main {
         Circle circle = new Circle(5.0, CIRCLE);
         circle.setRadius(15.0);
         circle.displayInfo();
-        circle.calculateCircumference(circle.getRadius());
-        circle.calculateAreaCircles(circle.getRadius());
+        circle.calculatePerimeter();
+        circle.calculateArea();
 
         Rectangle rectangle = new Rectangle(10.0, 5.0, RECTANGLE);
         rectangle.setSideA(12.0);
@@ -19,7 +19,7 @@ public class Main {
         rectangle.displayInfo();
 
         Square square = new Square(4.0, SQUARE);
-        square.setSideA(7.0);
+        square.setSide(7.0);
         square.calculatePerimeter();
         square.calculateArea();
         square.displayInfo();

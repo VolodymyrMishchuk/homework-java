@@ -31,15 +31,15 @@ class MainTest {
 
         // when
         circle.setRadius(15.0);
-        circle.calculateAreaCircles(circle.getRadius());
+        circle.calculateArea();
 
         // then
-        assertEquals(706.8583470577034, circle.calculateAreaCircles(circle.getRadius()));
+        assertEquals(706.8583470577034, circle.calculateArea());
         System.out.println(
                 "We are waiting for circumference to be set to "
                         + 706.8583470577034
                         + "\nand got circumference: "
-                        + circle.calculateAreaCircles(circle.getRadius())
+                        + circle.calculateArea()
         );
     }
 
@@ -50,15 +50,15 @@ class MainTest {
 
         // when
         circle.setRadius(15.0);
-        circle.calculateAreaCircles(circle.getRadius());
+        circle.calculateArea();
 
         // then
-        assertEquals(706.8583470577034, circle.calculateAreaCircles(circle.getRadius()));
+        assertEquals(706.8583470577034, circle.calculateArea());
         System.out.println(
                 "We are waiting for area of circle to be set to "
                         + 706.8583470577034
                         + "\nand got area of circle: "
-                        + circle.calculateAreaCircles(circle.getRadius())
+                        + circle.calculateArea()
         );
     }
 
@@ -144,15 +144,15 @@ class MainTest {
         Square square = new Square(5.0, FormFactor.SQUARE);
 
         // when
-        square.setSideA(7.0);
+        square.setSide(7.0);
 
         // then
-        assertEquals(7.0, square.getSideA());
+        assertEquals(7.0, square.getSide());
         System.out.println(
                 "We are waiting for width to be set to "
                         + 7.0
                         + "\nand got width: "
-                        + square.getSideA()
+                        + square.getSide()
         );
     }
 
@@ -162,7 +162,7 @@ class MainTest {
         Square square = new Square(5.0, FormFactor.RECTANGLE);
 
         // when
-        square.setSideA(7.0);
+        square.setSide(7.0);
         square.calculatePerimeter();
 
         // then
@@ -181,7 +181,7 @@ class MainTest {
         Square rectangle = new Square(5.0, FormFactor.RECTANGLE);
 
         // when
-        rectangle.setSideA(7.0);
+        rectangle.setSide(7.0);
         rectangle.calculateArea();
 
         // then

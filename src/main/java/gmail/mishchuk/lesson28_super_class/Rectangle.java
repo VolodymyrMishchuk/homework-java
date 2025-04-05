@@ -2,9 +2,9 @@ package gmail.mishchuk.lesson28_super_class;
 
 public class Rectangle extends Shape {
 
-    private FormFactor formFactor;
     private double sideA;
     private double sideB;
+    private FormFactor formFactor;
 
     public Rectangle(double sideA, double sideB, FormFactor formFactor) {
         this.sideA = sideA;
@@ -12,25 +12,14 @@ public class Rectangle extends Shape {
         this.formFactor = formFactor;
     }
 
-    public Rectangle() {
-    }
-
     @Override
     public double calculateArea() {
-        double area = sideA * sideB;
-        if (area != 0) {
-            return area;
-        }
-            return 0;
+        return (sideA * sideB);
     }
 
     @Override
     public double calculatePerimeter() {
-        double perimeter = (sideA * 2) + (sideB * 2);
-        if (perimeter != 0) {
-            return perimeter;
-        }
-            return 0;
+        return ((sideA * 2) + (sideB * 2));
     }
 
     @Override
