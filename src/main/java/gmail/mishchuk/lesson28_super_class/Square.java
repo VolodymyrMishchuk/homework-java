@@ -4,7 +4,7 @@ package gmail.mishchuk.lesson28_super_class;
 
 public class Square extends Rectangle {
 
-    double sideA;
+    private double side;
     private FormFactor formFactor;
 
     public Square(double sideA, FormFactor formFactor) {
