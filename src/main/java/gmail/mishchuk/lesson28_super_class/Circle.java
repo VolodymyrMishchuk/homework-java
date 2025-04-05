@@ -3,7 +3,7 @@ package gmail.mishchuk.lesson28_super_class;
 public class Circle extends Shape {
 
     private FormFactor formFactor;
-    double radius;
+    private double radius;
 
     public Circle(double radius, FormFactor formFactor) {
         this.radius = radius;
