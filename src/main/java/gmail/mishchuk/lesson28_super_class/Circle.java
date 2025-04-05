@@ -20,7 +20,7 @@ public class Circle extends Shape {
     }
 
     @Override
-    double calculatePerimeter() {
+    public double calculatePerimeter() {
         double circumference = 2 * Math.PI * radius;
         if (circumference != 0) {
             return circumference;
