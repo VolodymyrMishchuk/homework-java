@@ -1,4 +1,4 @@
-package gmail.mishchuk.lesson18;
+package gmail.mishchuk.lesson18_cars;
 
 import org.junit.jupiter.api.Test;
 
