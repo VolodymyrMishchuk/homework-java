@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
+//
 //        String intro = "\t\t Ну що, зкреейтимо авто?" +
 //                "\n Тобі потрібно буде лише ввести марку," +
 //                "\n скільки маєш пального і який у тебе розхід." +
