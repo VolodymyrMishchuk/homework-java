@@ -1,4 +1,4 @@
-package gmail.mishchuk.lesson11;
+package gmail.mishchuk.lesson11_switch;
 
 public class Main {
     public static void main(String[] args) {
