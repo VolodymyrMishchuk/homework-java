@@ -1,4 +1,4 @@
-package gmail.mishchuk.lesson10;
+package gmail.mishchuk.lesson10_array;
 
 public class Main {
     public static void main(String[] args) {

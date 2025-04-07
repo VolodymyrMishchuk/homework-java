@@ -1,4 +1,4 @@
-package gmail.mishchuk.lesson12;
+package gmail.mishchuk.lesson12_array_and_scanner;
 
 import java.util.Scanner;
 
