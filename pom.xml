@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <lombok.version>1.18.38</lombok.version>
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
-        <junit-jupiter.version>RELEASE</junit-jupiter.version>
+        <junit-jupiter.version>5.12.1</junit-jupiter.version>
     </properties>
 
     <dependencies>
@@ -44,11 +44,6 @@
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
                             <version>${lombok.version}</version>
-                        </path>
-                        <path>
-                            <groupId>org.junit.jupiter</groupId>
-                            <artifactId>junit-jupiter</artifactId>
-                            <version>${junit-jupiter.version}</version>
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
