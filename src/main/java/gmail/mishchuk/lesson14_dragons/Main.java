@@ -1,7 +1,7 @@
-package gmail.mishchuk.lesson14;
+package gmail.mishchuk.lesson14_dragons;
 
-import gmail.mishchuk.lesson14.quasiAnimals.Dragon;
-import gmail.mishchuk.lesson14.quasiAnimals.TypeOfDragons;
+import gmail.mishchuk.lesson14_dragons.quasiAnimals.Dragon;
+import gmail.mishchuk.lesson14_dragons.quasiAnimals.TypeOfDragons;
 
 import java.util.Scanner;
 import java.util.Random;
