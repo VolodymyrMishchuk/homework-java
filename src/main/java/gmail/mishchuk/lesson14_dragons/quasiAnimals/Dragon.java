@@ -1,5 +1,7 @@
 package gmail.mishchuk.lesson14_dragons.quasiAnimals;
 
+import java.util.Objects;
+
 public class Dragon {
 
     private String name;
@@ -49,6 +51,18 @@ public class Dragon {
 
     public double getWeight() {
         return weight;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Dragon dragon = (Dragon) o;
+        return age == dragon.age && Double.compare(weight, dragon.weight) == 0 && typeOfDragons == dragon.typeOfDragons;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(age, weight, typeOfDragons);
     }
 
     @Override

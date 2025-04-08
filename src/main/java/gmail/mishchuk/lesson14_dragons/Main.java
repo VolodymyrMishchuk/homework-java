@@ -7,6 +7,8 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Main {
+    private static Scanner scanner;
+
     public static void main(String[] args) {
         String intro = "\n\t\t\t ВАЖЛИВА ІНФОРМАЦІЯ!" +
                 "\n Наразі очікую від тебе певних послідовних дій," +
@@ -16,7 +18,7 @@ public class Main {
                 "\n\n Тому просто введи цифру від 1 до 10:";
         System.out.println(intro);
 
-        Scanner scanner = new Scanner(System.in);
+        scanner = new Scanner(System.in);
         int arrayLength;
 
         while (true) {
@@ -37,7 +39,7 @@ public class Main {
 
         System.out.println(
                 "Тепер створимо наших дракончиків!" +
-                "\n(після кожного введення потрібно натиснути Enter)"
+                        "\n(після кожного введення потрібно натиснути Enter)"
         );
 
         scanner.nextLine(); // очистка буфера
@@ -97,7 +99,8 @@ public class Main {
                      1 - Дракони вітаються;
                      2 - Дракони називаються;
                      3 - Дракони пускають вогонь;
-                     4 - Чемно попрощатися і завершити програму.""");
+                     4 - Так можна порівняти чи дракони однакові;
+                     5 - Чемно попрощатися і завершити програму.""");
 
             if (scanner.hasNextInt()) {
                 int choice = scanner.nextInt();
@@ -107,7 +110,8 @@ public class Main {
                     case 1 -> greetDragons(dragons);
                     case 2 -> nameDragons(dragons);
                     case 3 -> breatheFire(dragons);
-                    case 4 -> {
+                    case 4 -> equalsOfDragons(dragons);
+                    case 5 -> {
                         System.out.println("Дракони кажуть: 'До побачення, друже! 🐉'");
                         executeLoop = false;
                     }
@@ -143,6 +147,41 @@ public class Main {
             int fireAmount = random.nextInt(5) + 1;
             System.out.print(dragon.getName() + " дихнув: ");
             System.out.println("🔥".repeat(fireAmount));
+        }
+    }
+
+    public static void equalsOfDragons(Dragon[] dragons) {
+        System.out.println("Введи індекси двох драконів, яких хочеш порівняти (від 1 до " + dragons.length + "):");
+        int firstIndex;
+        int secondIndex;
+        while (true) {
+            System.out.print("Перший дракон №: ");
+            if (scanner.hasNextInt()) {
+                firstIndex = scanner.nextInt() - 1;
+                if (firstIndex >= 0 && firstIndex < dragons.length) break;
+                else System.out.println("Неправильний номер. Спробуй ще раз.");
+            } else {
+                System.out.println("Введи число!");
+                scanner.next();
+            }
+        }
+
+        while (true) {
+            System.out.print("Другий дракон №: ");
+            if (scanner.hasNextInt()) {
+                secondIndex = scanner.nextInt() - 1;
+                if (secondIndex >= 0 && secondIndex < dragons.length) break;
+                else System.out.println("Неправильний номер. Спробуй ще раз.");
+            } else {
+                System.out.println("Введи число!");
+                scanner.next();
+            }
+        }
+
+        if (dragons[firstIndex].equals(dragons[secondIndex])) {
+            System.out.println("Ці дракони схожі, як дві краплі води!");
+        } else {
+            System.out.println("Це зовсім різні дракони!");
         }
     }
 }
