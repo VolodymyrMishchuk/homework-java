@@ -1,4 +1,4 @@
-package gmail.mishchuk.recursion;
+package gmail.mishchuk.lesson16_recursion;
 
 public class Main {
     public static void main(String[] args) {

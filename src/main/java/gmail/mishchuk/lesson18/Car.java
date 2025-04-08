@@ -2,7 +2,7 @@ package gmail.mishchuk.lesson18;
 
 import java.time.LocalDate;
 
-import static gmail.mishchuk.recursion.Main.sum;
+import static gmail.mishchuk.lesson16_recursion.Main.sum;
 
 
 public class Car {
