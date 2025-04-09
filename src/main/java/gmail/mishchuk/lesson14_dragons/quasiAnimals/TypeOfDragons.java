@@ -1,4 +1,4 @@
-package gmail.mishchuk.lesson14.quasiAnimals;
+package gmail.mishchuk.lesson14_dragons.quasiAnimals;
 
 public enum TypeOfDragons {
     BIG_DRAGON,
