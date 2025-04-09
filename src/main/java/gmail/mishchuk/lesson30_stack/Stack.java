@@ -20,16 +20,29 @@ class Stack {
     }
 
     public int readTop() {
+        if (top == -1) {
+            throw new EmptyStackException();
+        }
         return stackArray[top];
-
     }
 
-    public boolean isEmpty() {
+    public boolean isEmpty() throws EmptyStackException {
         return (top == -1);
     }
 
-    public boolean isFull() {
+    public boolean isFull() throws FullStackException {
         return (top == maxSize - 1);
+    }
+
+    public void printStack() {
+        if (isEmpty()) {
+            System.out.println(")_^o^_(");
+        } else {
+            for (int i = top; i >= 0; i--) {
+                System.out.print(stackArray[i] + " ");
+            }
+            System.out.println();
+        }
     }
 }
 
