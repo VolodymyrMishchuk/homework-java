@@ -20,7 +20,7 @@ class StackTest {
 
         // then
         assertTrue(deleteElement.isPresent());
-        //assertEquals(1, deleteElement.get());
+        assertEquals(2, deleteElement.get());
     }
 
     @Test
