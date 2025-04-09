@@ -12,10 +12,16 @@ class Stack {
     }
 
     public void addElementToStack(int element) {
+        if (top == maxSize - 1) {
+            throw new FullStackException();
+        }
         stackArray[++top] = element;
     }
 
     public int deleteElementFromStack() {
+        if (top == -1) {
+            throw new EmptyStackException();
+        }
         return stackArray[top--];
     }
 
@@ -26,11 +32,11 @@ class Stack {
         return stackArray[top];
     }
 
-    public boolean isEmpty() throws EmptyStackException {
+    public boolean isEmpty() {
         return (top == -1);
     }
 
-    public boolean isFull() throws FullStackException {
+    public boolean isFull() {
         return (top == maxSize - 1);
     }
 
