@@ -1,6 +1,7 @@
 package gmail.mishchuk.lesson41_homework_extra;
 
 import java.util.*;
+import static gmail.mishchuk.lesson41_homework_extra.Logic.*;
 
 public class Main {
     @Override
@@ -29,21 +30,5 @@ public class Main {
                 + "\nта навіть поміняти місцями ключ - значення!"
                 + "\n " + mapForExample
                 + "\n " + changeFields(mapForExample));
-    }
-
-    public static boolean checkBoolean(List<Integer> vidro) {
-        Set<Integer> testVidro = new HashSet<>(vidro);
-        boolean result = false;
-        if (testVidro.size() == vidro.size())
-            result = true;
-        return result;
-    }
-
-    public static Map<Integer, String> changeFields(Map<String, Integer> oldMap) {
-        Map<Integer, String> newMap = new HashMap<>();
-        for (Map.Entry<String, Integer> entry : oldMap.entrySet()) {
-            newMap.put(entry.getValue(), entry.getKey());
-        }
-        return newMap;
     }
 }
