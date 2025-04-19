@@ -3,20 +3,20 @@ package gmail.mishchuk.lesson37_List;
 import java.util.*;
 
 public class NumberUtils {
-    public static int getSum(List<Number> numbers) {
-        int sum = 0;
+    public static double getSum(List<Number> numbers) {
+        double sum = 0;
 
         for (Number number : numbers) {
-            sum += number.intValue();
+            sum += number.doubleValue();
         }
         return sum;
     }
 
-    public static List<Integer> getMultiplyOddNumber(List<Number> numbers) {
-        List<Integer> result = new ArrayList<>();
+    public static List<Long> getMultiplyOddNumber(List<Number> numbers) {
+        List<Long> result = new ArrayList<>();
 
         for (Number number : numbers) {
-            int value = number.intValue();
+            long value = number.longValue();
             if (value % 2 != 0) {
                 result.add(value * 2);
             }

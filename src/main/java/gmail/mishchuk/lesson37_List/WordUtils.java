@@ -15,27 +15,27 @@ public class WordUtils {
     }
 
     public static Set<String> getTheUniqWords(List<String> words) {
-        return new HashSet<>(words);
+        return new LinkedHashSet<>(words);
     }
 
     public static Set<String> getDuplicateWords(List<String> words) {
-        Set<String> seen = new HashSet<>();
-        Set<String> duplikates = new HashSet<>();
+        Set<String> seen = new LinkedHashSet<>();
+        Set<String> duplicates = new LinkedHashSet<>();
 
         for (String word : words) {
             if (!seen.add(word)) {
-                duplikates.add(word);
+                duplicates.add(word);
             }
         }
-        return duplikates;
+        return duplicates;
     }
 
     public static Map<String, Integer> getEntriesOfWords(List<String> words) {
-        Map<String, Integer> entersCount = new HashMap<>();
+        Map<String, Integer> entriesCount = new HashMap<>();
 
         for (String word : words) {
-            entersCount.put(word, entersCount.getOrDefault(word, 0) + 1);
+            entriesCount.put(word, entriesCount.getOrDefault(word, 0) + 1);
         }
-        return entersCount;
+        return entriesCount;
     }
 }
