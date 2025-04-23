@@ -5,7 +5,7 @@ import java.util.*;
 public class MapUtils {
 
     public static Map<String, Integer> getUnitedMap(Map<String, Integer> map1, Map<String, Integer> map2) {
-        Map<String, Integer> finalMap = new LinkedHashMap<>(map1);
+        Map<String, Integer> finalMap = new HashMap<>(map1);
 
         for (Map.Entry<String, Integer> entry : map2.entrySet()) {
             String key = entry.getKey();
@@ -13,7 +13,7 @@ public class MapUtils {
 
             if (finalMap.containsKey(key)) {
                 finalMap.put(key, finalMap.get(key) + value);
-                System.out.println("\nНам прийшлось додати " + key + " (" + finalMap.get(key) + " + " + value + "),"
+                System.out.println("\nНам прийшлось додати " + key + " (" + map1.get(key) + " + " + value + "),"
                         + "\nоскільки вони були в обидвох Maps"
                 );
             } else {

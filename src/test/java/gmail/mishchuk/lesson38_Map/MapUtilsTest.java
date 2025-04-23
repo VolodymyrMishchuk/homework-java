@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class MapUtilsTest {
 
     @Test
-    void couldDoReturnUnitedMapFromTwoMaps() {
+    void shouldReturnUnitedMapFromTwoMaps() {
         // given
         Map<String, Integer> map1 = new HashMap<>();
         map1.put("candy's", 5);
@@ -29,5 +29,6 @@ class MapUtilsTest {
         testMap.put("chocolates", 5);
 
         assertEquals(unitedMap, testMap);
+        assertEquals(unitedMap.size(), testMap.size());
     }
 }
