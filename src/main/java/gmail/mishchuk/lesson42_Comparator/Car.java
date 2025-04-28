@@ -1,12 +1,12 @@
 package gmail.mishchuk.lesson42_Comparator;
 
 public class Car implements Comparable<Car> {
-    private int yearOfManufacture;
-    private double engineCapasity;
+    private final int yearOfManufacture;
+    private final double engineCapacity;
 
-    public Car(int yearOfManufacture, double engineCapasity) {
+    public Car(int yearOfManufacture, double engineCapacity) {
         this.yearOfManufacture = yearOfManufacture;
-        this.engineCapasity = engineCapasity;
+        this.engineCapacity = engineCapacity;
     }
 
     @Override
@@ -19,10 +19,15 @@ public class Car implements Comparable<Car> {
 
     @Override
     public String toString() {
-        return "\nYear of manufacture is: " + getYearOfManufacture();
+        return "\nYear of manufacture is: " + getYearOfManufacture()
+                + ", engine capacity is: " + getEngineCapacity();
     }
 
     public int getYearOfManufacture() {
         return yearOfManufacture;
+    }
+
+    public double getEngineCapacity() {
+        return engineCapacity;
     }
 }

@@ -1,25 +1,33 @@
 package gmail.mishchuk.lesson42_Comparator;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import org.apache.commons.math3.util.Precision;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
 
+        Random random = new Random();
         List<Car> listOfCar = new ArrayList<>();
 
-        Car car1 = new Car(2012, 2.5);
-        Car car2 = new Car(2022, 2.3);
-        Car car3 = new Car(2019, 4.3);
+        for (int i = 0; i < 5; i++) {
+            int year = 2000 + random.nextInt(26);
+            double engine = 1.0 + random.nextDouble(5.0);
+            Car car = new Car(
+                    year,
+                    Precision.round(engine, 1)
+            );
+            listOfCar.add(car);
+        }
 
-        listOfCar.add(car1);
-        listOfCar.add(car2);
-        listOfCar.add(car3);
+        // Розумію, що тут не прорахований варіант коли і рік, і об'єм будуть однакові.
+        // Наразі ризик такого мінімальний, хоч і не рівний нулю
+        Set<Car> sortedListOfCar = new TreeSet<>(Comparator
+                .comparing(Car::getYearOfManufacture)
+                .thenComparing(Car::getEngineCapacity)
+        );
+        sortedListOfCar.addAll(listOfCar);
 
-        Collections.sort(listOfCar);
-
-        System.out.println(car1.compareTo(car2));
-        System.out.println(listOfCar);
+        System.out.println("\tBefore sorting: " + listOfCar
+                + "\n\n\tAre sorted: " + sortedListOfCar);
     }
 }
