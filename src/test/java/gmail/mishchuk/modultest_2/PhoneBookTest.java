@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class PhoneBookTest {
 
     @Test
-    void addContact() {
+    void shouldReturnTruesAfterCreatingNewContact() {
         // given
         PhoneBook phoneBook = new PhoneBook();
 
@@ -20,7 +20,7 @@ class PhoneBookTest {
     }
 
     @Test
-    void updateContact() {
+    void shouldReturnTrueAfterUpdatingExistingContact() {
         // given
         PhoneBook phoneBook = new PhoneBook();
 
@@ -33,7 +33,7 @@ class PhoneBookTest {
     }
 
     @Test
-    void deleteContact() {
+    void shouldReturnTrueAfterDeletingExistingContact() {
         // given
         PhoneBook phoneBook = new PhoneBook();
 
@@ -46,7 +46,7 @@ class PhoneBookTest {
     }
 
     @Test
-    void searchContact() {
+    void shouldReturnTruesAfterSearchingExistingContact() {
         // given
         PhoneBook phoneBook = new PhoneBook();
 
